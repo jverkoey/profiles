@@ -26,6 +26,7 @@ alias gco="git checkout"
 alias gpo="git push origin"
 alias gpom="git push origin master"
 alias grom="git rebase origin/master"
+alias grom="git rebase origin/develop"
 alias gcaa="gca --amend"
 alias grc="git rebase --continue"
 alias grs="git rebase --skip"
@@ -35,3 +36,6 @@ alias gix="gitx --all"
 
 alias resrc="source ~/.bash_profile"
 
+function gpush() {
+  git push jverkoey $(git branch | grep \* | cut -d ' ' -f2) -u
+}
